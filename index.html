@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Curro Municipal — Fiscalización ciudadana del Municipio de Morón</title>
+<meta name="description" content="Periodismo de datos ciudadano sobre el Municipio de Morón. Presupuesto, licitaciones, propaganda y funcionarios. Todo dato es público y verificable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Source Sans 3',sans-serif;background:#faf8f4;color:#1a1208;font-size:16px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* TOP */
+.p-top{background:#1a1208;display:flex;justify-content:space-between;align-items:center;padding:8px 24px;flex-wrap:wrap;gap:4px}
+.p-top-date{font-size:11px;color:#888;letter-spacing:.5px}
+.p-top-claim{font-size:11px;color:#c8a84b;letter-spacing:.5px;font-style:italic}
+
+/* MASTHEAD */
+.p-mast{padding:28px 24px 0;border-bottom:3px solid #1a1208;background:#faf8f4}
+.p-mast-inner{text-align:center;margin-bottom:20px}
+.p-pretitle{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#999;margin-bottom:12px}
+.p-title{font-family:'Playfair Display',serif;font-size:clamp(40px,9vw,76px);font-weight:900;letter-spacing:-2px;line-height:.95;color:#1a1208;margin-bottom:10px}
+.p-title em{color:#c0392b;font-style:italic}
+.p-subtitle{font-size:13px;color:#888;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
+.p-rule{width:100%;height:1px;background:#1a1208;margin-bottom:12px;opacity:.15}
+.p-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:0}
+.p-nav-item{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:10px 16px;color:#1a1208;cursor:pointer;border-bottom:3px solid transparent;transition:all .15s}
+.p-nav-item:hover,.p-nav-item.active{color:#c0392b;border-bottom-color:#c0392b}
+
+/* BREAKING */
+.p-band{background:#c0392b;padding:10px 24px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.p-band-badge{font-size:10px;font-weight:700;color:#c0392b;background:#fff;padding:3px 8px;border-radius:2px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+.p-band-text{font-size:13px;color:#fff;font-weight:600;line-height:1.4}
+
+/* BODY */
+.p-body{padding:32px 24px;display:grid;grid-template-columns:1fr 280px;gap:40px;max-width:1100px;margin:0 auto}
+@media(max-width:768px){.p-body{grid-template-columns:1fr;gap:24px}.p-data-row{grid-template-columns:1fr 1fr}}
+
+/* MAIN */
+.p-feat-eyebrow{font-size:11px;font-weight:700;color:#c0392b;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.p-feat-eyebrow::after{content:'';flex:1;height:1px;background:#e0d8cc}
+.p-feat-title{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);font-weight:900;line-height:1.15;letter-spacing:-.5px;color:#1a1208;margin-bottom:14px}
+.p-feat-title em{color:#c0392b;font-style:italic}
+.p-feat-deck{font-size:17px;color:#444;line-height:1.65;margin-bottom:20px;font-style:italic;border-left:3px solid #c0392b;padding-left:16px}
+.p-feat-meta{font-size:12px;color:#999;margin-bottom:24px;display:flex;gap:16px;flex-wrap:wrap}
+.p-feat-meta span{color:#c0392b;font-weight:600}
+
+/* DATA ROW */
+.p-data-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e0d8cc;border:1px solid #e0d8cc;border-radius:4px;overflow:hidden;margin-bottom:28px}
+.p-data-cell{background:#faf8f4;padding:16px 12px;text-align:center}
+.p-data-cell.accent{background:#1a1208}
+.p-data-n{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:#c0392b;line-height:1}
+.p-data-cell.accent .p-data-n{color:#fff}
+.p-data-l{font-size:11px;color:#999;margin-top:5px;line-height:1.35;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.p-data-cell.accent .p-data-l{color:#666}
+
+/* TEXT */
+.p-text{font-size:16px;color:#2c2416;line-height:1.8;margin-bottom:18px}
+.p-text strong{color:#1a1208;font-weight:700}
+.p-text em{color:#c0392b;font-style:italic}
+.p-pullquote{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:#1a1208;border-top:2px solid #1a1208;border-bottom:2px solid #1a1208;padding:16px 0;margin:24px 0;line-height:1.4}
+.p-source{font-size:12px;color:#bbb;letter-spacing:.5px;padding-top:16px;border-top:1px solid #e0d8cc;margin-top:8px}
+.p-source strong{color:#c0392b}
+.p-hr{border:none;border-top:1px solid #e0d8cc;margin:32px 0}
+
+/* MAS NOTAS */
+.p-more-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1a1208;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #1a1208}
+.p-more-item{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e8e4dc;cursor:pointer}
+.p-more-item:last-child{border-bottom:none}
+.p-more-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#e0d8cc;line-height:1;min-width:36px}
+.p-more-cat{font-size:10px;font-weight:700;color:#c0392b;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
+.p-more-h{font-size:15px;font-weight:700;color:#1a1208;line-height:1.35}
+.p-more-item:hover .p-more-h{color:#c0392b}
+.p-more-sub{font-size:12px;color:#999;margin-top:3px}
+
+/* SIDEBAR */
+.p-side-box{border:1px solid #e0d8cc;border-radius:4px;padding:18px;margin-bottom:20px;background:#fff}
+.p-side-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#1a1208;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #1a1208}
+.p-kpi-item{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid #f0ece4}
+.p-kpi-item:last-child{border-bottom:none}
+.p-kpi-label{font-size:13px;color:#666;line-height:1.3;max-width:150px}
+.p-kpi-val{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#c0392b;white-space:nowrap}
+.p-topics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.p-topic{padding:12px 10px;border:1px solid #e0d8cc;border-radius:4px;text-align:center;cursor:pointer;background:#faf8f4;transition:all .15s}
+.p-topic:hover{background:#1a1208;border-color:#1a1208}
+.p-topic:hover .p-topic-name{color:#faf8f4}
+.p-topic:hover .p-topic-sub{color:#666}
+.p-topic-icon{font-size:18px;margin-bottom:5px}
+.p-topic-name{font-size:12px;font-weight:700;color:#1a1208}
+.p-topic-sub{font-size:10px;color:#bbb;margin-top:2px}
+
+/* FOOTER */
+.p-footer{background:#1a1208;padding:28px 24px;margin-top:0}
+.p-footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.p-footer-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#faf8f4}
+.p-footer-logo em{color:#c0392b;font-style:italic}
+.p-footer-text{font-size:12px;color:#555;line-height:1.6}
+</style>
+</head>
+<body>
+
+<div class="p-top">
+  <span class="p-top-date">Morón, Buenos Aires · Argentina</span>
+  <span class="p-top-claim">Todo dato es público. Todo dato es verificable.</span>
+</div>
+
+<div class="p-mast">
+  <div class="p-mast-inner">
+    <div class="p-pretitle">Periodismo de datos ciudadano · Morón · Buenos Aires</div>
+    <div class="p-title">El Curro <em>Municipal</em></div>
+    <div class="p-subtitle">Seguimos la plata del municipio de Morón</div>
+  </div>
+  <div class="p-rule"></div>
+  <nav class="p-nav">
+    <a class="p-nav-item active">Inicio</a>
+    <a class="p-nav-item">Presupuesto</a>
+    <a class="p-nav-item">Licitaciones</a>
+    <a class="p-nav-item">Propaganda</a>
+    <a class="p-nav-item">Funcionarios</a>
+    <a class="p-nav-item">Tasas</a>
+    <a class="p-nav-item">Servicios</a>
+  </nav>
+</div>
+
+<div class="p-band">
+  <span class="p-band-badge">Exclusivo</span>
+  <span class="p-band-text">311 contratos de publicidad en 2025 — el 91% sin licitación ni competencia</span>
+</div>
+
+<div class="p-body">
+  <main>
+    <div class="p-feat-eyebrow">Investigación · Publicidad oficial</div>
+    <h1 class="p-feat-title">Morón pagó propaganda a <em>jubilados</em> sin llamar a nadie más</h1>
+    <p class="p-feat-deck">El municipio emitió 311 contratos de publicidad en 2025 sin una sola licitación pública. En un solo día firmó 68 contratos en menos de cuatro horas.</p>
+    <div class="p-feat-meta">
+      <span>Fuente: <span>Portal de Compras · apps.moron.gob.ar</span></span>
+    </div>
+
+    <div class="p-data-row">
+      <div class="p-data-cell accent">
+        <div class="p-data-n">311</div>
+        <div class="p-data-l">Contratos publicidad 2025</div>
+      </div>
+      <div class="p-data-cell accent">
+        <div class="p-data-n">91%</div>
+        <div class="p-data-l">Sin competencia</div>
+      </div>
+      <div class="p-data-cell">
+        <div class="p-data-n">68</div>
+        <div class="p-data-l">Contratos en 1 solo día</div>
+      </div>
+      <div class="p-data-cell">
+        <div class="p-data-n">0</div>
+        <div class="p-data-l">Licitaciones públicas</div>
+      </div>
+    </div>
+
+    <p class="p-text">El rubro <strong>Publicidad TV/Gráfica/Radial/Web/Cine/Vía Pública/Streaming</strong> del Portal de Compras del Municipio de Morón registra 311 órdenes de compra durante 2025. Ninguna fue a licitación pública. El <em>91%</em> corresponde a contratos de tipo CODI — Compra Directa Único Proveedor — el mecanismo de menor transparencia y control.</p>
+
+    <p class="p-text">El <strong>21 de marzo de 2025</strong>, entre las 10 de la mañana y las 2 de la tarde, el municipio emitió 68 contratos de publicidad. Una orden cada cuatro minutos. Entre los beneficiarios figura Russo Antonio Gabriel, persona física jubilada con domicilio en Haedo, inscripta en IVA en abril de 2025 — el mismo mes en que empezó a recibir contratos municipales.</p>
+
+    <div class="p-pullquote">"68 contratos en un solo día. Una orden cada cuatro minutos. Todos sin licitación."</div>
+
+    <p class="p-text">Los picos de contratación coinciden con los meses preelectorales: <strong>marzo, julio y octubre de 2025</strong> concentran la mayor parte de las 311 órdenes. Las elecciones legislativas bonaerenses fueron el 26 de octubre de 2025.</p>
+
+    <div class="p-source">Todos los datos provienen del Portal de Compras oficial del Municipio de Morón · <strong>apps.moron.gob.ar</strong></div>
+
+    <div class="p-hr"></div>
+
+    <div class="p-more-title">Próximas investigaciones</div>
+    <div class="p-more-item">
+      <div class="p-more-num">01</div>
+      <div><div class="p-more-cat">Presupuesto</div><div class="p-more-h">$82.000 millones en sueldos: ¿cuántos empleados tiene Morón?</div><div class="p-more-sub">Próximamente</div></div>
+    </div>
+    <div class="p-more-item">
+      <div class="p-more-num">02</div>
+      <div><div class="p-more-cat">Tasas</div><div class="p-more-h">La tasa subió 128% en 2024 — ¿mejoraron los servicios?</div><div class="p-more-sub">Próximamente</div></div>
+    </div>
+    <div class="p-more-item">
+      <div class="p-more-num">03</div>
+      <div><div class="p-more-cat">Servicios</div><div class="p-more-h">¿A dónde va la basura que separás en Morón?</div><div class="p-more-sub">Próximamente</div></div>
+    </div>
+    <div class="p-more-item">
+      <div class="p-more-num">04</div>
+      <div><div class="p-more-cat">Funcionarios</div><div class="p-more-h">El patrimonio de los que nos gobiernan — antes y después</div><div class="p-more-sub">Próximamente</div></div>
+    </div>
+  </main>
+
+  <aside>
+    <div class="p-side-box">
+      <div class="p-side-title">Números de Morón 2025</div>
+      <div class="p-kpi-item"><span class="p-kpi-label">Presupuesto total</span><span class="p-kpi-val">$189K M</span></div>
+      <div class="p-kpi-item"><span class="p-kpi-label">Gasto en sueldos</span><span class="p-kpi-val">$82K M</span></div>
+      <div class="p-kpi-item"><span class="p-kpi-label">Gasto corriente</span><span class="p-kpi-val">82%</span></div>
+      <div class="p-kpi-item"><span class="p-kpi-label">Obra pública</span><span class="p-kpi-val">$22K M</span></div>
+      <div class="p-kpi-item"><span class="p-kpi-label">Deuda vigente</span><span class="p-kpi-val">$449 M</span></div>
+    </div>
+    <div class="p-side-box">
+      <div class="p-side-title">Explorá por tema</div>
+      <div class="p-topics">
+        <div class="p-topic"><div class="p-topic-icon">💰</div><div class="p-topic-name">Presupuesto</div><div class="p-topic-sub">1 nota</div></div>
+        <div class="p-topic"><div class="p-topic-icon">📢</div><div class="p-topic-name">Propaganda</div><div class="p-topic-sub">1 nota</div></div>
+        <div class="p-topic"><div class="p-topic-icon">📋</div><div class="p-topic-name">Licitaciones</div><div class="p-topic-sub">pronto</div></div>
+        <div class="p-topic"><div class="p-topic-icon">🧾</div><div class="p-topic-name">Tasas</div><div class="p-topic-sub">pronto</div></div>
+        <div class="p-topic"><div class="p-topic-icon">👔</div><div class="p-topic-name">Funcionarios</div><div class="p-topic-sub">pronto</div></div>
+        <div class="p-topic"><div class="p-topic-icon">🗑️</div><div class="p-topic-name">Servicios</div><div class="p-topic-sub">pronto</div></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer class="p-footer">
+  <div class="p-footer-inner">
+    <div class="p-footer-logo">El Curro <em>Municipal</em></div>
+    <div class="p-footer-text">Periodismo de datos ciudadano · Morón, Buenos Aires<br>Toda la información es pública, verificable y libre.</div>
+  </div>
+</footer>
+
+</body>
+</html>
