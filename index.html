@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El Curro Municipal — Fiscalización ciudadana del Municipio de Morón</title>
-<meta name="description" content="Periodismo de datos ciudadano sobre el Municipio de Morón. Presupuesto, licitaciones, propaganda y funcionarios. Todo dato es público y verificable.">
+<meta name="description" content="En Morón los impuestos vuelan. ¿A dónde va tu plata? Fiscalización ciudadana del Municipio de Morón. Todo dato es público y verificable.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -14,408 +14,137 @@ html{scroll-behavior:smooth}
 body{font-family:'Source Sans 3',sans-serif;background:#faf8f4;color:#1a1208;font-size:16px;line-height:1.6}
 a{text-decoration:none;color:inherit}
 
-/* TOP BAR */
-.topbar{background:#1a1208;display:flex;justify-content:space-between;align-items:center;padding:7px 24px;flex-wrap:wrap;gap:4px}
-.topbar-date{font-size:11px;color:#888;letter-spacing:.5px}
-.topbar-claim{font-size:11px;color:#c8a84b;letter-spacing:.5px;font-style:italic}
+.topbar{background:#1a1208;padding:7px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px}
+.topbar span{font-size:11px;color:#888;letter-spacing:.5px}
+.topbar em{color:#c8a84b;font-style:italic;font-size:11px}
 
-/* HEADER */
-.header{padding:28px 24px 0;border-bottom:3px solid #1a1208;background:#faf8f4}
-.header-inner{text-align:center;margin-bottom:20px}
+.header{padding:28px 24px 0;border-bottom:3px solid #1a1208;text-align:center;background:#faf8f4}
 .pretitle{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#999;margin-bottom:12px}
-.logo{font-family:'Playfair Display',serif;font-size:clamp(40px,9vw,76px);font-weight:900;letter-spacing:-2px;line-height:.95;color:#1a1208;margin-bottom:10px}
+.logo{font-family:'Playfair Display',serif;font-size:clamp(40px,9vw,72px);font-weight:900;letter-spacing:-2px;line-height:.95;margin-bottom:10px}
 .logo em{color:#c0392b;font-style:italic}
 .tagline{font-size:13px;color:#888;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
-.rule{width:100%;height:1px;background:#1a1208;margin-bottom:12px;opacity:.15}
+.rule{width:100%;height:1px;background:#1a1208;opacity:.15;margin-bottom:12px}
 nav{display:flex;justify-content:center;flex-wrap:wrap}
-nav a{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:10px 14px;color:#1a1208;cursor:pointer;border-bottom:3px solid transparent;transition:all .15s}
+nav a{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:10px 14px;color:#1a1208;border-bottom:3px solid transparent;transition:all .15s;cursor:pointer}
 nav a:hover{color:#c0392b;border-bottom-color:#c0392b}
 
-/* HERO */
-.hero{background:#1a1208;padding:48px 24px;text-align:center}
-.hero-eyebrow{font-size:11px;font-weight:700;color:#c8a84b;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,48px);font-weight:900;color:#faf8f4;line-height:1.15;letter-spacing:-.5px;margin-bottom:20px;max-width:700px;margin-left:auto;margin-right:auto}
+.hero{padding:48px 24px 40px;text-align:center;border-bottom:3px solid #1a1208;background:#faf8f4}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,42px);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin-bottom:16px;color:#1a1208;max-width:680px;margin-left:auto;margin-right:auto}
 .hero-title em{color:#c0392b;font-style:italic}
-.hero-text{font-size:17px;color:#aaa;line-height:1.7;max-width:600px;margin:0 auto 32px}
-.hero-cta{display:inline-block;background:#c0392b;color:#fff;font-size:14px;font-weight:700;padding:14px 28px;border-radius:3px;letter-spacing:.5px;transition:background .15s;margin:0 8px 8px}
-.hero-cta:hover{background:#a93226}
-.hero-cta.secondary{background:transparent;border:2px solid #444;color:#aaa}
-.hero-cta.secondary:hover{border-color:#888;color:#fff}
+.hero-text{font-size:16px;color:#555;line-height:1.75;max-width:560px;margin:0 auto}
 
-/* STATS */
-.stats{background:#fff;border-bottom:3px solid #1a1208}
-.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto}
-@media(max-width:600px){.stats-inner{grid-template-columns:1fr 1fr}}
-.stat{padding:24px 20px;text-align:center;border-right:1px solid #e0d8cc}
-.stat:last-child{border-right:none}
-.stat-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:#c0392b;line-height:1}
-.stat-l{font-size:11px;color:#999;margin-top:6px;line-height:1.4;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.budget{background:#1a1208;padding:32px 24px;text-align:center}
+.budget-label{font-size:11px;font-weight:700;color:#666;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
+.budget-num{font-family:'Playfair Display',serif;font-size:clamp(52px,11vw,88px);font-weight:900;color:#fff;line-height:1;letter-spacing:-2px}
+.budget-num em{color:#c0392b;font-style:normal}
+.budget-sub{font-size:13px;color:#444;margin-top:10px;letter-spacing:1px}
 
-/* SECTIONS NAV */
-.sec-nav{padding:40px 24px;max-width:1100px;margin:0 auto}
-.sec-nav-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1a1208;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #1a1208}
-.sec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
-.sec-card{background:#fff;border:1px solid #e0d8cc;border-radius:4px;padding:20px 16px;text-align:center;cursor:pointer;transition:all .2s}
-.sec-card:hover{background:#1a1208;border-color:#1a1208;transform:translateY(-2px)}
-.sec-card:hover .sec-card-name{color:#faf8f4}
-.sec-card:hover .sec-card-sub{color:#666}
-.sec-card-icon{font-size:24px;margin-bottom:8px}
-.sec-card-name{font-size:14px;font-weight:700;color:#1a1208;margin-bottom:4px}
-.sec-card-sub{font-size:11px;color:#bbb}
+.links{padding:32px 24px;max-width:640px;margin:0 auto}
+.links-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#1a1208;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #1a1208}
+.link-item{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid #e8e4dc;cursor:pointer;gap:16px}
+.link-item:last-child{border-bottom:none}
+.link-item:hover .link-titulo{color:#c0392b}
+.link-cat{font-size:10px;font-weight:700;color:#c0392b;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
+.link-titulo{font-size:15px;font-weight:700;color:#1a1208;line-height:1.35;transition:color .15s}
+.link-badge{display:inline-block;font-size:9px;background:#fdf0ee;color:#c0392b;border:1px solid #f5c6be;padding:2px 7px;border-radius:2px;letter-spacing:1px;text-transform:uppercase;margin-left:6px;vertical-align:middle}
+.link-badge.pronto{background:#f5f5f5;color:#bbb;border-color:#e8e8e8}
+.link-arrow{font-size:20px;color:#ccc;flex-shrink:0}
 
-/* NOTAS */
-.notas{background:#fff;border-top:1px solid #e0d8cc;border-bottom:1px solid #e0d8cc;padding:40px 24px}
-.notas-inner{max-width:1100px;margin:0 auto}
-.notas-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1a1208;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #1a1208;display:flex;justify-content:space-between;align-items:baseline}
-.notas-title a{font-size:12px;font-weight:700;color:#c0392b;letter-spacing:1px;text-transform:uppercase}
-.nota-item{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:20px 0;border-bottom:1px solid #f0ece4}
-.nota-item:last-child{border-bottom:none}
-.nota-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;color:#e0d8cc;line-height:1;min-width:40px}
-.nota-cat{font-size:10px;font-weight:700;color:#c0392b;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
-.nota-h{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#1a1208;line-height:1.3;margin-bottom:6px}
-.nota-item:hover .nota-h{color:#c0392b}
-.nota-desc{font-size:14px;color:#777;line-height:1.55;margin-bottom:6px}
-.nota-meta{font-size:11px;color:#bbb}
-.nota-meta span{color:#c0392b;font-weight:600}
-.nota-badge{display:inline-block;font-size:9px;background:#fdf0ee;color:#c0392b;border:1px solid #f5c6be;padding:2px 8px;border-radius:2px;letter-spacing:1px;text-transform:uppercase;margin-left:8px;vertical-align:middle}
-.nota-badge.pronto{background:#f5f5f5;color:#bbb;border-color:#e8e8e8}
+.redes{background:#fff;border-top:1px solid #e0d8cc;border-bottom:1px solid #e0d8cc;padding:28px 24px;text-align:center}
+.redes-title{font-size:12px;font-weight:700;color:#999;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.redes-btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.red{display:inline-flex;align-items:center;gap:8px;background:#faf8f4;border:1px solid #e0d8cc;color:#555;font-size:13px;font-weight:600;padding:10px 18px;border-radius:4px;transition:all .15s;cursor:pointer}
+.red:hover{background:#1a1208;border-color:#1a1208;color:#fff}
 
-/* QUIENES SOMOS */
-.quienes{padding:40px 24px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-@media(max-width:768px){.quienes{grid-template-columns:1fr}}
-.quienes-text{}
-.quienes-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1a1208;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #1a1208}
-.quienes-p{font-size:15px;color:#444;line-height:1.75;margin-bottom:14px}
-.quienes-p strong{color:#1a1208;font-weight:700}
-.quienes-p em{color:#c0392b;font-style:italic}
-.manifesto{background:#1a1208;border-radius:4px;padding:24px}
-.manifesto-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#c8a84b;margin-bottom:16px;letter-spacing:.5px}
-.manifesto-item{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
-.manifesto-item:last-child{margin-bottom:0}
-.manifesto-check{color:#c0392b;font-size:16px;margin-top:2px;flex-shrink:0}
-.manifesto-text{font-size:14px;color:#aaa;line-height:1.55}
-.manifesto-text strong{color:#faf8f4}
-
-/* COMO VERIFICAMOS */
-.verifica{background:#fff;border-top:1px solid #e0d8cc;border-bottom:1px solid #e0d8cc;padding:40px 24px}
-.verifica-inner{max-width:1100px;margin:0 auto}
-.verifica-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1a1208;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #1a1208}
-.verifica-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.verifica-card{border:1px solid #e0d8cc;border-radius:4px;padding:20px;background:#faf8f4}
-.verifica-icon{font-size:24px;margin-bottom:10px}
-.verifica-name{font-size:14px;font-weight:700;color:#1a1208;margin-bottom:6px}
-.verifica-desc{font-size:13px;color:#777;line-height:1.55}
-.verifica-link{font-size:11px;color:#c0392b;margin-top:8px;font-weight:600;letter-spacing:.5px}
-
-/* CONTACTO */
-.contacto{padding:40px 24px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px}
-@media(max-width:768px){.contacto{grid-template-columns:1fr}}
-.contacto-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1a1208;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #1a1208}
-.contacto-p{font-size:15px;color:#555;line-height:1.7;margin-bottom:16px}
-.contacto-metodos{display:flex;flex-direction:column;gap:10px;margin-top:8px}
-.contacto-metodo{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #e0d8cc;border-radius:4px;padding:14px 16px}
-.contacto-metodo-icon{font-size:20px}
-.contacto-metodo-name{font-size:13px;font-weight:700;color:#1a1208;margin-bottom:2px}
-.contacto-metodo-desc{font-size:12px;color:#999}
-.form-group{margin-bottom:16px}
-.form-label{font-size:12px;font-weight:700;color:#555;letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px;display:block}
-.form-input{width:100%;padding:10px 14px;border:1px solid #e0d8cc;border-radius:4px;font-family:'Source Sans 3',sans-serif;font-size:14px;color:#1a1208;background:#fff;transition:border .15s}
-.form-input:focus{outline:none;border-color:#c0392b}
-textarea.form-input{resize:vertical;min-height:100px}
-.form-note{font-size:11px;color:#bbb;margin-top:6px;line-height:1.5}
-.form-btn{background:#c0392b;color:#fff;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:700;padding:12px 24px;border:none;border-radius:4px;cursor:pointer;letter-spacing:.5px;transition:background .15s;width:100%}
-.form-btn:hover{background:#a93226}
-
-/* REDES */
-.redes{background:#1a1208;padding:32px 24px;text-align:center}
-.redes-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#faf8f4;margin-bottom:8px}
-.redes-sub{font-size:13px;color:#666;margin-bottom:24px}
-.redes-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.red-btn{display:inline-flex;align-items:center;gap:8px;background:#2a2a2a;color:#aaa;font-size:13px;font-weight:600;padding:10px 20px;border-radius:4px;border:1px solid #333;transition:all .15s;cursor:pointer}
-.red-btn:hover{background:#c0392b;border-color:#c0392b;color:#fff}
-
-/* FOOTER */
-footer{background:#0f0d08;padding:28px 24px}
-.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.footer-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#faf8f4}
+footer{background:#1a1208;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:#faf8f4}
 .footer-logo em{color:#c0392b;font-style:italic}
-.footer-text{font-size:12px;color:#444;line-height:1.7;text-align:right}
-.footer-text a{color:#666}
-.footer-text a:hover{color:#c0392b}
+.footer-text{font-size:11px;color:#444;line-height:1.6;text-align:right}
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
-  <span class="topbar-date">Morón, Buenos Aires · Argentina</span>
-  <span class="topbar-claim">Todo dato es público. Todo dato es verificable.</span>
+  <span>Morón, Buenos Aires · Argentina</span>
+  <em>Todo dato es público. Todo dato es verificable.</em>
 </div>
 
-<!-- HEADER -->
 <div class="header">
-  <div class="header-inner">
-    <div class="pretitle">Periodismo de datos ciudadano · Morón · Buenos Aires</div>
-    <div class="logo">El Curro <em>Municipal</em></div>
-    <div class="tagline">Seguimos la plata del municipio de Morón</div>
-  </div>
+  <div class="pretitle">Fiscalización ciudadana · Morón · Buenos Aires</div>
+  <div class="logo">El Curro <em>Municipal</em></div>
+  <div class="tagline">Seguimos la plata del municipio de Morón</div>
   <div class="rule"></div>
   <nav>
-    <a href="#notas">Investigaciones</a>
-    <a href="#temas">Temas</a>
+    <a href="#investigaciones">Investigaciones</a>
     <a href="#quienes">¿Quiénes somos?</a>
     <a href="#verificamos">Cómo verificamos</a>
     <a href="#contacto">Contacto</a>
   </nav>
 </div>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">Morón · Buenos Aires · Argentina</div>
-  <h1 class="hero-title">Un vecino que <em>mira</em> lo que el municipio hace con tu plata</h1>
-  <p class="hero-text">Nada de lo que publicamos es secreto. Todo está en registros públicos, portales oficiales y documentos del Estado. Lo que hacemos es buscarlo, analizarlo y contártelo en criollo.</p>
-  <a href="#notas" class="hero-cta">Ver las investigaciones</a>
-  <a href="https://elcurromunicipal.substack.com" target="_blank" class="hero-cta secondary">Suscribite gratis →</a>
+  <h1 class="hero-title">En Morón los impuestos vuelan.<br><em>¿A dónde va tu plata?</em></h1>
+  <p class="hero-text">Nada de lo que publicamos es secreto. Todo está en registros públicos y documentos oficiales. Lo buscamos, lo analizamos y te lo contamos en criollo.</p>
 </div>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stats-inner">
-    <div class="stat">
-      <div class="stat-n">311</div>
-      <div class="stat-l">Contratos publicidad sin licitación · 2025</div>
+<div class="budget">
+  <div class="budget-label">Presupuesto Municipal Morón 2025</div>
+  <div class="budget-num">$189<em>K</em> M</div>
+  <div class="budget-sub">pesos argentinos · partido de Morón · provincia de Buenos Aires</div>
+</div>
+
+<div class="links" id="investigaciones">
+  <div class="links-title">Investigaciones</div>
+  <a href="https://elcurromunicipal.substack.com" target="_blank" class="link-item">
+    <div>
+      <div class="link-cat">Propaganda oficial <span class="link-badge">Nuevo</span></div>
+      <div class="link-titulo">Morón pagó 311 contratos de publicidad en 2025 sin una sola licitación pública</div>
     </div>
-    <div class="stat">
-      <div class="stat-n">91%</div>
-      <div class="stat-l">A proveedor único sin competencia</div>
+    <div class="link-arrow">→</div>
+  </a>
+  <div class="link-item">
+    <div>
+      <div class="link-cat">Presupuesto <span class="link-badge pronto">Próximamente</span></div>
+      <div class="link-titulo">$82.000 millones en sueldos — ¿cuántos empleados tiene Morón?</div>
     </div>
-    <div class="stat">
-      <div class="stat-n">$189K M</div>
-      <div class="stat-l">Presupuesto municipal 2025</div>
-    </div>
-    <div class="stat">
-      <div class="stat-n">0</div>
-      <div class="stat-l">Licitaciones públicas de publicidad</div>
-    </div>
+    <div class="link-arrow">→</div>
   </div>
-</div>
-
-<!-- TEMAS -->
-<div class="sec-nav" id="temas">
-  <div class="sec-nav-title">Explorá por tema</div>
-  <div class="sec-grid">
-    <div class="sec-card"><div class="sec-card-icon">💰</div><div class="sec-card-name">Presupuesto</div><div class="sec-card-sub">A dónde va cada peso</div></div>
-    <div class="sec-card"><div class="sec-card-icon">📢</div><div class="sec-card-name">Propaganda</div><div class="sec-card-sub">Cuánto gasta en publicarse</div></div>
-    <div class="sec-card"><div class="sec-card-icon">📋</div><div class="sec-card-name">Licitaciones</div><div class="sec-card-sub">Quién gana los contratos</div></div>
-    <div class="sec-card"><div class="sec-card-icon">🧾</div><div class="sec-card-name">Tasas</div><div class="sec-card-sub">Lo que pagás vs. lo que recibís</div></div>
-    <div class="sec-card"><div class="sec-card-icon">👔</div><div class="sec-card-name">Funcionarios</div><div class="sec-card-sub">Sueldos y patrimonio</div></div>
-    <div class="sec-card"><div class="sec-card-icon">🗑️</div><div class="sec-card-name">Servicios</div><div class="sec-card-sub">Residuos, alumbrado, calles</div></div>
+  <div class="link-item">
+    <div>
+      <div class="link-cat">Tasas <span class="link-badge pronto">Próximamente</span></div>
+      <div class="link-titulo">La tasa subió 128% en 2024 — ¿mejoraron los servicios?</div>
+    </div>
+    <div class="link-arrow">→</div>
   </div>
-</div>
-
-<!-- NOTAS -->
-<div class="notas" id="notas">
-  <div class="notas-inner">
-    <div class="notas-title">
-      Investigaciones
-      <a href="https://elcurromunicipal.substack.com" target="_blank">Ver todas en Substack →</a>
+  <div class="link-item">
+    <div>
+      <div class="link-cat">Servicios <span class="link-badge pronto">Próximamente</span></div>
+      <div class="link-titulo">¿A dónde va la basura que separás en Morón?</div>
     </div>
-
-    <div class="nota-item">
-      <div class="nota-num">01</div>
-      <div>
-        <div class="nota-cat">Propaganda oficial <span class="nota-badge">Nuevo</span></div>
-        <div class="nota-h">Morón pagó 311 contratos de publicidad en 2025 sin una sola licitación pública</div>
-        <div class="nota-desc">El 91% fueron a proveedor único, sin competencia ni llamado a nadie más. En un solo día se emitieron 68 contratos en menos de cuatro horas. Los picos coinciden con los meses previos a las elecciones de octubre.</div>
-        <div class="nota-meta">Fuente: <span>Portal de Compras · apps.moron.gob.ar</span></div>
-      </div>
+    <div class="link-arrow">→</div>
+  </div>
+  <div class="link-item">
+    <div>
+      <div class="link-cat">Funcionarios <span class="link-badge pronto">Próximamente</span></div>
+      <div class="link-titulo">El patrimonio de los que nos gobiernan — antes y después de asumir</div>
     </div>
-
-    <div class="nota-item">
-      <div class="nota-num">02</div>
-      <div>
-        <div class="nota-cat">Presupuesto <span class="nota-badge pronto">Próximamente</span></div>
-        <div class="nota-h">$82.000 millones en sueldos: ¿cuántos empleados tiene Morón y qué hacen?</div>
-        <div class="nota-desc">El rubro más grande del presupuesto 2025 bajo la lupa. Planta permanente, contratados y monotributistas.</div>
-        <div class="nota-meta">En preparación</div>
-      </div>
-    </div>
-
-    <div class="nota-item">
-      <div class="nota-num">03</div>
-      <div>
-        <div class="nota-cat">Tasas <span class="nota-badge pronto">Próximamente</span></div>
-        <div class="nota-h">La tasa municipal subió 128% en 2024 — ¿mejoraron los servicios?</div>
-        <div class="nota-desc">Lo que pagás contra lo que recibís. Una comparación con datos reales de ejecución presupuestaria.</div>
-        <div class="nota-meta">En preparación</div>
-      </div>
-    </div>
-
-    <div class="nota-item">
-      <div class="nota-num">04</div>
-      <div>
-        <div class="nota-cat">Servicios <span class="nota-badge pronto">Próximamente</span></div>
-        <div class="nota-h">¿A dónde va la basura que separás en Morón?</div>
-        <div class="nota-desc">El contrato de reciclado, la empresa adjudicada y el destino final del material que separás en casa.</div>
-        <div class="nota-meta">En preparación</div>
-      </div>
-    </div>
-
-    <div class="nota-item">
-      <div class="nota-num">05</div>
-      <div>
-        <div class="nota-cat">Funcionarios <span class="nota-badge pronto">Próximamente</span></div>
-        <div class="nota-h">El patrimonio de los que nos gobiernan: antes y después de asumir</div>
-        <div class="nota-desc">Declaraciones juradas públicas cruzadas con registros de propiedades y vehículos.</div>
-        <div class="nota-meta">En preparación</div>
-      </div>
-    </div>
+    <div class="link-arrow">→</div>
   </div>
 </div>
 
-<!-- QUIENES SOMOS -->
-<div class="quienes" id="quienes">
-  <div class="quienes-text">
-    <div class="quienes-title">¿Quiénes somos?</div>
-    <p class="quienes-p">Somos vecinos de Morón hartos de pagar tasas que suben todos los años mientras los servicios siguen igual — o peor.</p>
-    <p class="quienes-p">No somos periodistas profesionales ni tenemos redacción. Somos ciudadanos que aprendimos a leer presupuestos, buscar licitaciones y cruzar datos públicos.</p>
-    <p class="quienes-p"><strong>Todo lo que publicamos está basado en documentos oficiales.</strong> No inventamos nada. No especulamos. Si algo no está respaldado por una fuente pública, no lo publicamos.</p>
-    <p class="quienes-p">Preferimos el <em>anonimato</em> por ahora — no porque tengamos algo que ocultar, sino porque queremos que el foco esté en los datos, no en quién los publica.</p>
-  </div>
-  <div class="manifesto">
-    <div class="manifesto-title">Lo que nos guía</div>
-    <div class="manifesto-item">
-      <div class="manifesto-check">●</div>
-      <div class="manifesto-text"><strong>Sin partido.</strong> No somos kirchneristas ni macristas ni de ningún otro espacio. Fiscalizamos al que gobierna, sea quien sea.</div>
-    </div>
-    <div class="manifesto-item">
-      <div class="manifesto-check">●</div>
-      <div class="manifesto-text"><strong>Sin sueldo.</strong> Esto es un hobby ciudadano. Nadie nos financia ni nos paga por lo que publicamos.</div>
-    </div>
-    <div class="manifesto-item">
-      <div class="manifesto-check">●</div>
-      <div class="manifesto-text"><strong>Sin secretos.</strong> Cada dato que publicamos tiene su fuente indicada. Podés verificarlo vos mismo.</div>
-    </div>
-    <div class="manifesto-item">
-      <div class="manifesto-check">●</div>
-      <div class="manifesto-text"><strong>Con errores posibles.</strong> Si nos equivocamos, lo corregimos públicamente y explicamos qué cambió.</div>
-    </div>
-  </div>
-</div>
-
-<!-- COMO VERIFICAMOS -->
-<div class="verifica" id="verificamos">
-  <div class="verifica-inner">
-    <div class="verifica-title">¿Cómo verificamos los datos?</div>
-    <div class="verifica-grid">
-      <div class="verifica-card">
-        <div class="verifica-icon">🏛️</div>
-        <div class="verifica-name">Portal de Compras de Morón</div>
-        <div class="verifica-desc">Todas las órdenes de compra, licitaciones y contrataciones directas del municipio.</div>
-        <div class="verifica-link">apps.moron.gob.ar</div>
-      </div>
-      <div class="verifica-card">
-        <div class="verifica-icon">📜</div>
-        <div class="verifica-name">HCD de Morón</div>
-        <div class="verifica-desc">Ordenanzas, presupuestos aprobados y actas de sesión del Concejo Deliberante.</div>
-        <div class="verifica-link">hcdmoron.gob.ar</div>
-      </div>
-      <div class="verifica-card">
-        <div class="verifica-icon">🔍</div>
-        <div class="verifica-name">AFIP / ARCA</div>
-        <div class="verifica-desc">Verificamos el CUIT, actividad declarada y domicilio fiscal de cada proveedor contratado.</div>
-        <div class="verifica-link">afip.gob.ar</div>
-      </div>
-      <div class="verifica-card">
-        <div class="verifica-icon">📊</div>
-        <div class="verifica-name">Tribunal de Cuentas PBA</div>
-        <div class="verifica-desc">Auditorías oficiales de la Provincia de Buenos Aires sobre municipios bonaerenses.</div>
-        <div class="verifica-link">tribunaldecuentas.gba.gob.ar</div>
-      </div>
-      <div class="verifica-card">
-        <div class="verifica-icon">📰</div>
-        <div class="verifica-name">Boletín Oficial Municipal</div>
-        <div class="verifica-desc">Decretos, resoluciones y actos administrativos oficiales del Municipio de Morón.</div>
-        <div class="verifica-link">moron.gob.ar</div>
-      </div>
-      <div class="verifica-card">
-        <div class="verifica-icon">🗂️</div>
-        <div class="verifica-name">Acceso a la Información Pública</div>
-        <div class="verifica-desc">Cuando los datos no están publicados, los pedimos formalmente por Ley 13.666 provincial.</div>
-        <div class="verifica-link">Ley provincial 13.666</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CONTACTO -->
-<div class="contacto" id="contacto">
-  <div>
-    <div class="contacto-title">Contacto</div>
-    <p class="contacto-p">¿Sos vecino de Morón y tenés información sobre algo raro que viste en el municipio? ¿Trabajás ahí adentro y querés contarnos algo? Escribinos — tu identidad es segura con nosotros.</p>
-    <p class="contacto-p">También podés escribirnos si encontrás un error en algo que publicamos. Lo corregimos sin drama.</p>
-    <div class="contacto-metodos">
-      <div class="contacto-metodo">
-        <div class="contacto-metodo-icon">✉️</div>
-        <div>
-          <div class="contacto-metodo-name">Email seguro</div>
-          <div class="contacto-metodo-desc">elcurromunicipal@proton.me — cifrado de extremo a extremo</div>
-        </div>
-      </div>
-      <div class="contacto-metodo">
-        <div class="contacto-metodo-icon">💬</div>
-        <div>
-          <div class="contacto-metodo-name">Signal</div>
-          <div class="contacto-metodo-desc">Para información sensible — mensajes que se autodestruyen</div>
-        </div>
-      </div>
-      <div class="contacto-metodo">
-        <div class="contacto-metodo-icon">📱</div>
-        <div>
-          <div class="contacto-metodo-name">Redes sociales</div>
-          <div class="contacto-metodo-desc">@elcurromunicipal en Instagram y Twitter/X</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div class="contacto-title">Mandanos un mensaje</div>
-    <form onsubmit="return false">
-      <div class="form-group">
-        <label class="form-label">Asunto</label>
-        <input type="text" class="form-input" placeholder="¿De qué se trata?">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Tu mensaje</label>
-        <textarea class="form-input" placeholder="Contanos lo que viste o sabés. No hace falta que te identifiques."></textarea>
-        <div class="form-note">Este formulario manda el mensaje directamente a nuestro email. No guardamos registros de quién escribe.</div>
-      </div>
-      <button class="form-btn" onclick="window.location='mailto:elcurromunicipal@proton.me'">Enviar por email →</button>
-    </form>
-  </div>
-</div>
-
-<!-- REDES -->
 <div class="redes">
-  <div class="redes-title">Seguinos en las redes</div>
-  <div class="redes-sub">Publicamos los datos clave en Instagram y Twitter para que los puedas compartir con otros vecinos</div>
-  <div class="redes-links">
-    <a href="https://instagram.com/elcurromunicipal" target="_blank" class="red-btn">📸 Instagram @elcurromunicipal</a>
-    <a href="https://twitter.com/elcurromunicipal" target="_blank" class="red-btn">🐦 Twitter @elcurromunicipal</a>
-    <a href="https://elcurromunicipal.substack.com" target="_blank" class="red-btn">📧 Newsletter en Substack</a>
+  <div class="redes-title">Seguinos y suscribite</div>
+  <div class="redes-btns">
+    <a href="https://instagram.com/elcurromunicipal" target="_blank" class="red">📸 Instagram</a>
+    <a href="https://twitter.com/elcurromunicipal" target="_blank" class="red">🐦 Twitter / X</a>
+    <a href="https://elcurromunicipal.substack.com" target="_blank" class="red">📧 Newsletter gratis</a>
+    <a href="mailto:elcurromunicipal@proton.me" class="red">✉️ Contacto</a>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-logo">El Curro <em>Municipal</em></div>
-    <div class="footer-text">
-      Periodismo de datos ciudadano · Morón, Buenos Aires<br>
-      Toda la información es pública, verificable y libre.<br>
-      <a href="mailto:elcurromunicipal@proton.me">elcurromunicipal@proton.me</a>
-    </div>
-  </div>
+  <div class="footer-logo">El Curro <em>Municipal</em></div>
+  <div class="footer-text">Morón · Buenos Aires · Argentina<br>elcurromunicipal@proton.me</div>
 </footer>
 
 </body>
